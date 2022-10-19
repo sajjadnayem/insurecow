@@ -18,3 +18,7 @@ Route::get('/', function () {
     return view('master');
 });
 Route::get('/index', [UserController::class, 'index'])->name('user.index');
+Route::get('export/excel', [UserController::class, 'exportIntoExcel'])->name('export.excel');
+Route::get('export/CSV', [UserController::class, 'exportIntoCsv'])->name('export.csv');
+Route::get('/import-form', [UserController::class, 'importForm'])->name('user.import');
+Route::post('/import-file', [UserController::class, 'import'])->name('import.file');
