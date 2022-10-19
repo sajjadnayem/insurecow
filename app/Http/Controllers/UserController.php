@@ -13,7 +13,7 @@ class UserController extends Controller
 {
     public function index()
     {
-        $user = User::paginate(15);
+        $user = User::all();
         // return UserResource::collection($user);
         return view('admin.pages.User.user', compact('user'));
     }
